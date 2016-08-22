@@ -43,4 +43,4 @@ def get_images_from_css(directory, location):
 get_images_from_file('./sfgov.org/sites/default/files/Homepage/carousel.html', 'sfgov.org/sites/default/files/Homepage/Carousel')
 get_images_from_file('./sfgov.org/sites/default/files/Homepage/slide.html', 'sfgov.org/sites/default/files/Homepage/Slide')
 
-get_images_from_css('./sfgov.org/sites/default/files/css_injector', 'sfgov.org/sites/default/files/Images/Mainpages')
+get_images_from_css('./sfgov.org/sites/default/files/css_injector', 'sfgov.org/sites/default/files/Images/MainPages')
