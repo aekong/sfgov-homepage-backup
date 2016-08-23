@@ -19,15 +19,10 @@ cp -r sfgov.org sfgov.org.bak
 find ./sfgov.org/js -name "sfhome*" -type f -exec sed -i.sedtmp 's/\.\.\/sites\/default/sites\/default/g' {} \;
 cd sfgov.org
 wget -O residents_json.js "http://sfgov.org/residents_json?services_callback=services_callback"
-find ./sites/default/files/js_injector/ -name "*.js*" -type f -exec sed -i.sedtmp 's/residents_json/residents_json.js/g' {} \;
 wget -O business_json.js "http://sfgov.org/business_json?services_callback=services_callback"
-find ./sites/default/files/js_injector/ -name "*.js*" -type f -exec sed -i.sedtmp 's/business_json/business_json.js/g' {} \;
 wget -O opengov_json.js "http://sfgov.org/opengov_json?services_callback=services_callback"
-find ./sites/default/files/js_injector/ -name "*.js*" -type f -exec sed -i.sedtmp 's/opengov_json/opengov_json.js/g' {} \;
 wget -O visitors_json.js "http://sfgov.org/visitors_json?services_callback=services_callback"
-find ./sites/default/files/js_injector/ -name "*.js*" -type f -exec sed -i.sedtmp 's/visitors_json/visitors_json.js/g' {} \;
 wget -O onlineservices_json.js "http://sfgov.org/onlineservices_json?services_callback=services_callback"
-find ./sites/default/files/js_injector/ -name "*.js*" -type f -exec sed -i.sedtmp 's/onlineservices_json/onlineservices_json.js/g' {} \;
 cd ..
 wget -O hpnews.js "http://sfgov.org/hpnews?news_callback=news_callback"
 find ./sfgov.org/js -name "sfhome.js" -type f -exec sed -i.sedtmp 's/\.\.\/hpnews/\.\.\/hpnews.js/g' {} \;
