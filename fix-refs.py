@@ -30,7 +30,7 @@ def fix_references():
         f = open(fn, 'w')
         f.write(str)
         f.close
-      if fnmatch.fnmatch(filename, 'js_injector*.js'):
+      if fnmatch.fnmatch(filename, 'js_injector*.js'): # fixes the js references
         fn = os.path.join(dName + '/' + filename)
         f = open(fn, 'r')
         str = f.read()
