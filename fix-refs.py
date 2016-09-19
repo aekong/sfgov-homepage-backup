@@ -36,6 +36,7 @@ def fix_references():
         f = open(fn, 'r')
         str = f.read()
         f.close()
+        str = re.sub(r'http:\/\/sfgov.org\/', '', str)
         str = re.sub(r'_json', '_json.js', str)
         f = open(fn, 'w')
         f.write(str)
