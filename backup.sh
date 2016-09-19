@@ -38,3 +38,4 @@ python fix-refs.py
 find ./home/sfgov.org/sites/default/files/Homepage/ -name "*.html" -type f -exec sed -i.sedtmp 's/src="\.\.\/sites\/default/src="sites\/default/g' {} \;
 find ./home/sfgov.org/sites/default/files/css_injector/ -name "*.css*" -type f -exec sed -i.sedtmp 's/http:\/\/sfgov.org\/sites\/default\/files\/Images\/MainPages\/SFGov.*Pages/\.\.\/Images\/MainPages/g' {} \;
 find . -name "*.sedtmp" -type f -delete
+rm -rf ./home/sfgov.org.bak
