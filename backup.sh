@@ -1,6 +1,6 @@
-rm -rf home || true
-mkdir home
-cd home
+rm -rf sfgov-home-backup || true
+mkdir sfgov-home-backup
+cd sfgov-home-backup
 wget -r -l 2 --exclude-domains -p -k -E http://sfgov.org && echo OK || echo FAILED_SOMEWHERE_WGET_SFGOV.ORG
 wget -r -l 2 --exclude-domains -p -k -E http://sfgov.org/news && echo OK || echo FAILED_SOMEWHERE_WGET_SFGOV.ORG.NEWS
 cd sfgov.org/js
@@ -35,7 +35,7 @@ find ./sfgov.org/js/sfhome.js -exec sed -i.sedtmp 's/\.\.\/news/news.html/g' {} 
 cd ..
 python get-images.py
 python fix-refs.py
-find ./home/sfgov.org/sites/default/files/Homepage/ -name "*.html" -type f -exec sed -i.sedtmp 's/src="\.\.\/sites\/default/src="sites\/default/g' {} \;
-find ./home/sfgov.org/sites/default/files/css_injector/ -name "*.css*" -type f -exec sed -i.sedtmp 's/http:\/\/sfgov.org\/sites\/default\/files\/Images\/MainPages\/SFGov.*Pages/\.\.\/Images\/MainPages/g' {} \;
+find ./sfgov-home-backup/sfgov.org/sites/default/files/Homepage/ -name "*.html" -type f -exec sed -i.sedtmp 's/src="\.\.\/sites\/default/src="sites\/default/g' {} \;
+find ./sfgov-home-backup/sfgov.org/sites/default/files/css_injector/ -name "*.css*" -type f -exec sed -i.sedtmp 's/http:\/\/sfgov.org\/sites\/default\/files\/Images\/MainPages\/SFGov.*Pages/\.\.\/Images\/MainPages/g' {} \;
 find . -name "*.sedtmp" -type f -delete
-rm -rf ./home/sfgov.org.bak
+rm -rf ./sfgov-home-backup/sfgov.org.bak

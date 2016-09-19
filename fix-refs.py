@@ -4,9 +4,9 @@ import fnmatch
 
 cwd = os.getcwd()
 print cwd
-cssdir = './home/sfgov.org/sites/default/files/css_injector'
-jsdir = './home/sfgov.org/sites/default/files/js_injector'
-fontdir = './home/sfgov.org/sites/all/themes/sf/fonts/fa'
+cssdir = './sfgov-home-backup/sfgov.org/sites/default/files/css_injector'
+jsdir = './sfgov-home-backup/sfgov.org/sites/default/files/js_injector'
+fontdir = './sfgov-home-backup/sfgov.org/sites/all/themes/sf/fonts/fa'
 
 def fix_filenames(directory, regex, replace=''):
   d = os.path.join(cwd, directory)
@@ -16,7 +16,7 @@ def fix_filenames(directory, regex, replace=''):
     os.rename(d + '/' + filename, d + '/' + newfilename)
 
 def fix_references():
-  for dName, sdName, fList in os.walk(cwd + '/home/sfgov.org'):
+  for dName, sdName, fList in os.walk(cwd + '/sfgov-home-backup/sfgov.org'):
     for filename in fList:
       if fnmatch.fnmatch(filename, '*.html') or fnmatch.fnmatch(filename, '*.css') or fnmatch.fnmatch(filename, '*json.js'):
         fn = os.path.join(dName+'/'+filename)
@@ -47,7 +47,7 @@ def fix_references():
 fix_filenames(cssdir, '\?.*\.css')
 fix_filenames(jsdir, '\?.*')
 fix_filenames(fontdir, '\?.*')
-fix_filenames('./home/sfgov.org', 'news\?', 'news-')
+fix_filenames('./sfgov-home-backup/sfgov.org', 'news\?', 'news-')
 
 fix_references()
   

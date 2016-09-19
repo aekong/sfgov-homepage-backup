@@ -58,9 +58,9 @@ def get_images_from_json(directory, location):
     print "download: " + imagepath + " to " + loc
     urllib.urlretrieve(imagepath, loc)
 
-get_images_from_file('./home/sfgov.org/sites/default/files/Homepage/carousel.html', 'home/sfgov.org/sites/default/files/Homepage/Carousel')
-get_images_from_file('./home/sfgov.org/sites/default/files/Homepage/slide.html', 'home/sfgov.org/sites/default/files/Homepage/Slide')
+get_images_from_file('./sfgov-home-backup/sfgov.org/sites/default/files/Homepage/carousel.html', 'sfgov-home-backup/sfgov.org/sites/default/files/Homepage/Carousel')
+get_images_from_file('./sfgov-home-backup/sfgov.org/sites/default/files/Homepage/slide.html', 'sfgov-home-backup/sfgov.org/sites/default/files/Homepage/Slide')
 
-get_images_from_css('./home/sfgov.org/sites/default/files/css_injector', 'home/sfgov.org/sites/default/files/Images/MainPages')
+get_images_from_css('./sfgov-home-backup/sfgov.org/sites/default/files/css_injector', 'sfgov-home-backup/sfgov.org/sites/default/files/Images/MainPages')
 
-get_images_from_json('./home/sfgov.org', 'home/sfgov.org/sites/default/files/Images/Key Services')
+get_images_from_json('./sfgov-home-backup/sfgov.org', 'sfgov-home-backup/sfgov.org/sites/default/files/Images/Key Services')
